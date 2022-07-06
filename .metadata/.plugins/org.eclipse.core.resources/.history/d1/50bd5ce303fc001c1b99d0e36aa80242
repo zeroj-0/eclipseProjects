@@ -1,0 +1,29 @@
+package com.varxyz.jv301.mod009;
+
+import javax.servlet.ServletContextEvent;
+import javax.servlet.ServletContextListener;
+import javax.servlet.annotation.WebListener;
+
+/**
+ * 어노테이션을 가지고 다 처리하는 것 -> xml등록필요x
+ * @author Administrator
+ * 
+ * Servlet과 WebListener 등
+ * 파일 전체를 볼때는 xml을 통해 보는게 좋음
+ */
+@WebListener
+public class InitializeCourseListenser implements ServletContextListener {
+
+	// 톰캣에 올라가고 내려갈때 이벤트를 발생
+	@Override
+	public void contextInitialized(ServletContextEvent sce)  { 
+		System.out.println("contextInitialized() method called");
+	}
+
+	@Override
+    public void contextDestroyed(ServletContextEvent sce)  { 
+		System.out.println("contextDestroyed() method called");
+    }
+
+	
+}

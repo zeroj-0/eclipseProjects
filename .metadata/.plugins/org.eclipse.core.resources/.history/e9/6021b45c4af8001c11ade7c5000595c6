@@ -1,0 +1,11 @@
+package com.varxyz.jv301.mod006;
+
+public class User {
+	private String userId;
+	private String passwd;
+	private String userName;
+	private String ssn;
+	private String mail;
+	private String addr;	
+	
+}

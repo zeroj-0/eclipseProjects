@@ -1,0 +1,5 @@
+'use strict'
+document.getElementById("btn").addEventListener('click', function(){
+	console.log("출력");
+  document.getElementById("content").style.display = "block";
+});

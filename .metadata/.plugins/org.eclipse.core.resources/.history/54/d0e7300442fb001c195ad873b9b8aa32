@@ -1,0 +1,59 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"		pageEncoding="UTF-8"%>
+<%-- 
+<%@ page import="" session="" errorPage="" isErrorPage="" contentType="" pageEncoding="" %>
+ --%>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>회원가입</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+	<div>
+		<div id="header">
+			<jsp:include page="">
+				<jsp:param name="subtitle" value="mod007 : Java Bean and include" />
+			</jsp:include>
+		</div>
+		<div id="content-wrapper">
+		</div>
+		<div id="footer">
+		</div>
+	</div>
+  <div class="container">
+    <h3>íìê°ì</h3>
+    <form class="" action="add_user.do" method="post">
+      <div class="">
+        <input type="text" name="userId" placeholder="ìì´ë">
+      </div>
+      <div class="">
+        <input type="password" name="password" placeholder="ë¹ë°ë²í¸">
+      </div>
+      <div class="">
+        <input type="text" name="userName" placeholder="ì´ë¦">
+      </div>
+      <div class="">
+        <input type="text" name="ssn" placeholder="ì£¼ë¯¼ë²í¸ììë¦¬">
+      </div>
+      <div>
+        <input type="text" name="email1" placeholder="ì´ë©ì¼">
+        <span class="email">@</span>
+        <select class="" name="email2">
+          <option value="gmail.com">gmail.com</option>
+          <option value="naver.com">naver.com</option>
+          <option value="nate.com">nate.com</option>
+          <option value="daum.com">daum.net</option>
+        </select>
+      </div>
+      <div>
+      	<input type="text" name="addr1" placeholder="ì£¼ì" class="address1">
+      	<input type="text" name="addr2" placeholder="ìì¸ì£¼ì">
+      </div>
+      <div class="btn">
+        <button type="submit">íì¸</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

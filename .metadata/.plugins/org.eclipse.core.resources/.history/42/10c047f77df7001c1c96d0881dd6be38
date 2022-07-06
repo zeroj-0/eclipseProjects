@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="add_user.do" method="post">
+		<input type="text" name="userId">
+		<input type="text" name="userId">
+		<input type="text" name="userId">
+		<input type="text" name="userId">
+		<input type="text" name="userId">
+		<input type="text" name="userId">
+		<input type="text" name="userId">
+		<input type="text" name="userId">
+		<input type="text" name="userId">
+		<button type="submit">확인</button>
+	</form>
+</body>
+</html>

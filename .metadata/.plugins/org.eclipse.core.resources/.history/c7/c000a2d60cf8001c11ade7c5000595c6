@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form>
+		<h3>File Upload Example</h3>
+	</form>
+		첨부파일 : <input type="file" name="attachedfile"/>
+		<input type="submit" value="전송"/>
+</body>
+</html>

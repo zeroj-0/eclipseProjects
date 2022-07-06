@@ -1,0 +1,12 @@
+CREATE TABLE MenuItem (
+	id				INT							PRIMARY KEY,
+	cateId	INT,
+	name		VARCHAR(20),
+	price		DOUBLE
+	
+	CONSTRAINT MenuItem_MenuCategory_FK FOREIGN KEY (cateId) REFERENCES MenuCategory(id)
+);
+
+CREATE TABLE MenuCategory (
+	id				INT							PRIMARY KEY
+);
