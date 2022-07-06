@@ -1,0 +1,30 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@page import="java.net.URLEncoder"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<link rel="stylesheet" href="./fixmethod.css">
+</head>
+<body>
+<div id="wrapper">
+		<div id="header">
+			<jsp:include page="/incl/banner.jsp">
+				<jsp:param name="subtitle" value='<%=URLEncoder.encode(\"mod007 : 자바 빈즈\", \"UTF-8\") %>'/>
+			</jsp:include>
+		</div>
+		<div id="content-wrapper">
+			<h3>회원가입 되었습니다.</h3>
+			<%-- User클래스에서의 던져준 객체의 프로퍼티를 가져오는 것 --%>
+			<c:forEach var = "user" items="${userList}">
+				<h3>안녕하세요</h3>
+			</c:forEach>
+		</div>
+		<div id="footer">
+			<%@ include file="/incl/footer.jsp" %>
+		</div>
+	</div>
+</body>
+</html>
