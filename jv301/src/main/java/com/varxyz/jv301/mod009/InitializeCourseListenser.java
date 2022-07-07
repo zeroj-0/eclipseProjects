@@ -18,6 +18,8 @@ import javax.servlet.annotation.WebListener;
  * 
  * Servlet과 WebListener 등
  * 파일 전체를 볼때는 xml을 통해 보는게 좋음
+ * 
+ * 사실은 컨테이너가 존재할때까지의 scope
  */
 @WebListener
 public class InitializeCourseListenser implements ServletContextListener {

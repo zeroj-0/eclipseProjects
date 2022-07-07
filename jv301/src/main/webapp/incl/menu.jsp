@@ -3,6 +3,7 @@
 <div class="gnb">
 	<ul>
 		<li><a href="add_user.jsp">Form</a></li>
+		<li><a href="login">Login</a></li>
 		<li><a href="user_list.do">List</a></li>
 	</ul>
 </div>

@@ -1,0 +1,32 @@
+package com.varxyz.jv301.mod010;
+
+import java.util.*;
+
+public class UserService {
+	private static final UserService service = new UserService();
+	private UserDao userDao = new UserDao() ;
+	
+	List<User> userList = new ArrayList<User>();
+	
+	public static UserService getInstance() {
+		return service;
+	}
+	
+	public void addUser(User user) {
+		userDao.addUser(user);
+	}
+	
+	public List<User> getAllUsers() {
+		return userDao.findAllUsers();
+	}
+
+	public boolean isValidUser(String userId, String passwd) {
+		userDao.findUserPasswd(passwd);
+		return true;
+//		if(userId == userDao.findUserId(userId) && passwd == userDao.findUserPasswd(passwd)) {
+//			return true;
+//		} else {			
+//			return false;
+//		}
+	}
+}
