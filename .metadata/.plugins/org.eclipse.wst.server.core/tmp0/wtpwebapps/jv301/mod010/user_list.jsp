@@ -61,12 +61,15 @@
 	<div class="container">
 				<table>			
 					<tr>
-						<th>이름</th><th>아이디</th><th>이메일</th>
+						<th>이름</th><th>생년월일</th><th>아이디</th><th>이메일</th>
 					</tr>
 					<c:forEach var="user" items="${user}">
 						<tr>
 							<td>
 								${user.getUserName()}
+							</td>
+							<td>
+								${user.getSsn()}
 							</td>
 							<td>
 								${user.getUserId()}

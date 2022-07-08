@@ -9,5 +9,6 @@
 <body>
 로그인성공
 <a href='<c:url value="/mod010/logout"/>'>logout</a>
+<label>Last Access Time : </label> ${lastAccessTime}
 </body>
 </html>

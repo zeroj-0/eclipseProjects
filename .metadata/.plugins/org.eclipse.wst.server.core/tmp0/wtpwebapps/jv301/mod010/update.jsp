@@ -14,48 +14,51 @@
   	button.btn-inner {
   		width: 100px;
   	}
+  	.email {
+  		width: 40%;
+  	}
+  	.address {
+  		width: 40%;
+  	}
+  	span.id {
+  		font-size: 13px;
+  		color: red;
+  		margin-left: 15px;
+  	}
   </style>
 </head>
 <body>
 <div id="wrapper">
 		<div id="header">
 			<%@ include file="/incl/menu.jsp" %>
-			<jsp:include page="/incl/banner.jsp">
-				<jsp:param name="subtitle" value="mod010 : Java Bean and include" />
-			</jsp:include>
 		</div>
 		<div id="content-wrapper">
 			<div class="container">
-			    <h3>회원가입</h3>
+			    <h3>회원 수정</h3>
+			    <form action="update_user.do" method="post">
 			      <div class="d">
-			        <input type="text" name="userId" placeholder="아이디">
+			        <input type="text" name="userId" placeholder="아이디"  value="${findUser.getUserId()}" readonly>
+			        <span class="id">* 아이디는 수정이 되지 않습니다.</span>
 			      </div>
 			      <div class="d">
-			        <input type="password" name="password" placeholder="비밀번호">
+			        <input type="password" name="password" placeholder="비밀번호" value="${findUser.getPasswd() }">
 			      </div>
 			      <div class="d">
-			        <input type="text" name="userName" placeholder="이름">
+			        <input type="text" name="userName" placeholder="이름" value="${findUser.getUserName() }">
 			      </div>
 			      <div class="d">
-			        <input type="text" name="ssn" placeholder="주민번호앞자리">
+			        <input type="text" name="ssn" placeholder="주민번호앞자리" value="${findUser.getSsn() }">
 			      </div>
 			      <div class="d">
-			        <input type="text" name="email1" placeholder="이메일">
-			        <span class="email">@</span>
-			        <select class="" name="email2">
-			          <option value="gmail.com">gmail.com</option>
-			          <option value="naver.com">naver.com</option>
-			          <option value="nate.com">nate.com</option>
-			          <option value="daum.com">daum.net</option>
-			        </select>
+			        <input type="text" name="email" placeholder="이메일"  class="email" value="${findUser.getEmail() }">
 			      </div>
 			      <div class="d">
-			      	<input type="text" name="addr1" placeholder="주소" class="address1">
-			      	<input type="text" name="addr2" placeholder="상세주소">
+			      	<input type="text" name="addr" placeholder="주소" class="address" value="${findUser.getAddr() }">
 			      </div>
 			      <div class="btn">
 			        <button type="submit" class="btn-inner">수정하기</button>
 			      </div>
+			    </form>
 			  </div>
 		</div>
 		<div id="footer">

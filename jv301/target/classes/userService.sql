@@ -20,3 +20,7 @@ update User set ssn='960118' WHERE name='남길동';
 update User set ssn='990707' WHERE name='권길동';
 
 update User set ssn='951112' where name='예슈화';
+
+SELECT id,passwd,name,email,addr,ssn FROM User WHERE id='21811053';
+
+UPDATE User SET passwd='123', name='남길동', ssn='960118', email='21811123@nate.com', addr='대구광역시 중구 고영희식당' WHERE id = '21811123';

@@ -28,5 +28,11 @@ public class UserService {
 		}
 	}
 	
-	public 
+	public User finUserByUserId(String userId) {
+		return userDao.findUserByUserId(userId);
+	}
+
+	public void updateUser(User user) {
+		userDao.updateUser(user);
+	}
 }
