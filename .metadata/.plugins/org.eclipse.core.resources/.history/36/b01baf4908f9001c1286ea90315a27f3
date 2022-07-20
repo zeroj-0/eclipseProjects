@@ -1,6 +1,0 @@
-CREATE TABLE MenuItem (
-	id				int							PRIMARY KEY,
-	cateId	int							FOREIGN KEY,
-	name		VARCHAR(20),
-	price		double
-);

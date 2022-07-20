@@ -22,6 +22,8 @@
 	</section>
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="C:\JAVA_lgm\eclipse-workspace\jv301\src\main\java\com\varxyz\jv301\mod010\UserService.java"/>
+			<item value="C:\JAVA_lgm\eclipse-workspace\jv301\src\main\webapp\WEB-INF\web.xml"/>
 			<item value="C:\JAVA_lgm\eclipse-workspace\jv200\src\main\resources\jv250.sql"/>
 		</list>
 		<list key="projectNameTemplate">
@@ -46,13 +48,10 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
-			<item value="com.varxyz.jv301"/>
 		</list>
 		<list key="groupId">
-			<item value="com.varxyz"/>
 		</list>
 		<list key="artifactId">
-			<item value="jv301"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
