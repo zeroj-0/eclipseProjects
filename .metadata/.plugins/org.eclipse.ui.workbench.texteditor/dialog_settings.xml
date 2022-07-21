@@ -8,6 +8,8 @@
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="maven-war"/>
+			<item value="maven-"/>
 			<item value="send"/>
 			<item value="진입"/>
 			<item value="cid"/>

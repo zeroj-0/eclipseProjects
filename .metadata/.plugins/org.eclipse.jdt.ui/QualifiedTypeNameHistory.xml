@@ -1,21 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="java.io.FileOutputStream"/>
-    <fullyQualifiedTypeName name="java.io.FileInputStream"/>
-    <fullyQualifiedTypeName name="com.varxyz.jv251.dao.DataSourceManager"/>
-    <fullyQualifiedTypeName name="com.varxyz.jv251.exception.DuplicateEntityException"/>
-    <fullyQualifiedTypeName name="com.varxyz.jv251.domain.SavingsAccount"/>
-    <fullyQualifiedTypeName name="com.varxyz.jv251.exception.EntityNotFoundException"/>
-    <fullyQualifiedTypeName name="com.varxyz.jv251.exception.CustomerNotFoundException"/>
-    <fullyQualifiedTypeName name="com.varxyz.jv251.domain.CheckingAccount"/>
-    <fullyQualifiedTypeName name="com.varxyz.jv251.dao.CustomerDao"/>
-    <fullyQualifiedTypeName name="com.varxyz.jv251.service.CustomerService"/>
-    <fullyQualifiedTypeName name="com.varxyz.jv251.domain.Customer"/>
-    <fullyQualifiedTypeName name="java.lang.Math"/>
-    <fullyQualifiedTypeName name="java.lang.StringBuffer"/>
-    <fullyQualifiedTypeName name="com.varxyz.jv251.domain.Account"/>
-    <fullyQualifiedTypeName name="com.varxyz.jv251.dao.AccountDao"/>
-    <fullyQualifiedTypeName name="javax.servlet.http.HttpServlet"/>
     <fullyQualifiedTypeName name="javax.servlet.ServletConfig"/>
     <fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
     <fullyQualifiedTypeName name="javax.servlet.http.HttpServletResponse"/>
@@ -40,12 +24,9 @@
     <fullyQualifiedTypeName name="java.sql.Connection"/>
     <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
     <fullyQualifiedTypeName name="com.varxyz.jv301.mod009.DataSource"/>
-    <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="java.sql.ResultSet"/>
     <fullyQualifiedTypeName name="java.sql.SQLException"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="com.varxyz.jv301.mod009.User"/>
-    <fullyQualifiedTypeName name="java.util.Map"/>
     <fullyQualifiedTypeName name="java.util.HashMap"/>
     <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
     <fullyQualifiedTypeName name="javax.servlet.http.Cookie"/>
@@ -58,6 +39,25 @@
     <fullyQualifiedTypeName name="com.varxyz.jv301.mod010.User"/>
     <fullyQualifiedTypeName name="com.varxyz.jvx330.intro.Hello"/>
     <fullyQualifiedTypeName name="com.varxyz.jvx330.intro.HelloBeanEn"/>
+    <fullyQualifiedTypeName name="org.springframework.context.annotation.Bean"/>
+    <fullyQualifiedTypeName name="com.varxyz.jvx330.di.example4.ex1.NamingService"/>
+    <fullyQualifiedTypeName name="com.varxyz.jvx330.di.example5.ex1.MemberController"/>
+    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Qualifier"/>
+    <fullyQualifiedTypeName name="lombok.Getter"/>
+    <fullyQualifiedTypeName name="lombok.Setter"/>
+    <fullyQualifiedTypeName name="lombok.AllArgsConstructor"/>
+    <fullyQualifiedTypeName name="lombok.ToString"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="lombok.EqualsAndHashCode"/>
+    <fullyQualifiedTypeName name="java.util.Map"/>
+    <fullyQualifiedTypeName name="java.lang.RuntimeException"/>
+    <fullyQualifiedTypeName name="com.varxyz.jvx330.di.example7.MenuItemService"/>
     <fullyQualifiedTypeName name="org.springframework.context.support.GenericApplicationContext"/>
     <fullyQualifiedTypeName name="org.springframework.context.support.GenericXmlApplicationContext"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+    <fullyQualifiedTypeName name="org.springframework.stereotype.Component"/>
+    <fullyQualifiedTypeName name="org.springframework.context.annotation.Configuration"/>
+    <fullyQualifiedTypeName name="org.springframework.context.annotation.ComponentScan"/>
+    <fullyQualifiedTypeName name="org.springframework.context.annotation.AnnotationConfigApplicationContext"/>
 </qualifiedTypeNameHistroy>
