@@ -1,0 +1,209 @@
+@charset "UTF-8";
+
+@font-face {
+	src: url("/banking/resources/css/Jalnan.ttf");
+	font-family: "Jalnan";
+}
+
+.gnb ul li a {
+	line-height: 70px;
+	font-size: 20px;
+	color: white;
+	font-family: "Jalnan";
+}
+
+section {
+	height: 100%;
+	overflow: hidden;
+}
+
+.container {
+	display: flex;
+	flex-wrap: wrap;
+	height: 100%;
+	width: 700px;
+	margin: 0 auto;
+	align-items: center;
+}
+
+.container .title-wrap {
+	width: 100%;
+	line-height: 60px;
+	padding-top: 150px;
+	text-align: center;
+}
+
+.container .title-wrap .title {
+	display: inline-block;
+	height: 100%;
+	font-size: 36px;
+	text-align: center;
+	padding: 0 8px;
+	position: relative;
+	font-family: "Jalnan";
+}
+
+.container .title-wrap .title:before {
+	position: absolute;
+	content: '';
+	width: 100%;
+	height: 14px;
+	bottom: 7px;
+	left: 0;
+	z-index: -1;
+	background: #EDE6DB;
+}
+
+.container>.form-wrap {
+	display: flex;
+	height: 100%;
+	align-items: flex-start;
+	width: 100%;
+}
+
+.form-wrap> .login {
+	width: 100%;
+}
+
+.content {
+	height: 50px;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 30px;
+}
+
+.content>input {
+	height: 35px;
+	line-height: 35px;
+	padding-left: 5px;
+	width: 60%;
+	height: 50px;
+	font-size: 15px;
+}
+
+.content>input:focus {
+	outline: none;
+	border-color: rgba(65, 125, 122, .6);
+	box-shadow: 0 0 6px 2px rgba(65, 125, 122, .6);
+}
+
+.container>#content-wrapper {
+	display: flex;
+	height: 100%;
+	align-items: flex-start;
+	width: 100%;
+	padding: 0 80px;
+}
+
+.content {
+	width: 100%;
+}
+
+.add_user {
+	padding-top: 20px;
+	width: 100%;
+}
+
+.add {
+	height: 60px;
+	width: 100%;
+	display: flex;
+	justify-content: left;
+	align-items: center;
+	margin-top: 10px;
+}
+
+.phone {
+	height: 60px;
+	flex-wrap: wrap;
+}
+
+.add>input {
+	width: 100%;
+	height: 45px;
+	line-height: 45px;
+	padding-left: 5px;
+	font-size: 15px;
+}
+
+.add>input:focus {
+	outline: none;
+	border-color: rgba(65, 125, 122, .6);
+	box-shadow: 0 0 6px 2px rgba(65, 125, 122, .6);
+}
+
+.add>select.phoneNum_selec:focus {
+	outline: none;
+	border-color: rgba(65, 125, 122, .6);
+	box-shadow: 0 0 6px 2px rgba(65, 125, 122, .6);
+}
+
+select.phoneNum_selec {
+	height: 45px;
+	width: 30%;
+	font-size: 15px;
+}
+
+span.phoneNum_middle {
+	margin: 0 5px;
+}
+
+span.phone {
+	margin-top: 5px;
+	display: block;
+	text-align: right;
+	font-size: 13px;
+	color: red;
+	margin-left: 15px;
+	width: 100%;
+}
+
+.address1 {
+	width: 250px;
+	margin-right: 10px;
+}
+
+.btn-group {
+	display: flex;
+	width: 100%;
+	height: 50px;
+	margin-top: 30px;
+	justify-content: center;
+}
+
+.i-btn {
+	display: flex;
+	justify-content: space-around;
+	height: 100%;
+	width: 60%;
+}
+
+.i-btn>input {
+	justify-content: center;
+	border-style: none;
+	font-size: 20px;
+	background: #417D7A;
+	color: white;
+	border-radius: 30px;
+	width: 150px;
+	height: 50px;
+	cursor: pointer;
+}
+
+.i-btn>.in-btn {
+	font-size: 20px;
+	background: #417D7A;
+	color: white;
+	border-radius: 30px;
+	width: 150px;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	font-family: "Jalnan";
+}
+
+.i-btn>.in-btn:hover {
+	font-weight: normal;
+}
