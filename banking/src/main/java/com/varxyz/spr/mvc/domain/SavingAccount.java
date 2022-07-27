@@ -10,9 +10,21 @@ import lombok.Setter;
 public class SavingAccount extends Account {
 	private double interestRate;
 
+	public SavingAccount(long customerId, String accountNum, char accType, double balance, Customer customer,
+			double interestRate) {
+		super(customerId, accountNum, accType, balance, customer);
+		this.interestRate = interestRate;
+	}
+	
 	public SavingAccount(long aid, long customerId, String accountNum, char accType, double balance, Customer customer,
 			double interestRate) {
 		super(aid, customerId, accountNum, accType, balance, customer);
 		this.interestRate = interestRate;
 	}
+
+	public SavingAccount() {
+		super();
+	}
+
+	
 }

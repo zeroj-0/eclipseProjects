@@ -9,8 +9,8 @@
 <link rel="stylesheet" type="text/css" href="<c:url value='/resources/css/style.css'/>"/>
 </head>
 <body>
-<section>
-    <div class="container">
+<section class="login-section">
+    <div class="container login-container">
       <div class="title-wrap">
         <h3 class="title">로그인</h3>
       </div>

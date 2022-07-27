@@ -40,7 +40,7 @@
 									<button type="submit" class="btn-inner">확인</button>
 								</div>
 								<div class="btn">
-									<a href="/login" class="in-btn">취소</a>
+									<a href="/banking/domain/login" class="in-btn">취소</a>
 								</div>
 							</div>
 						</div>

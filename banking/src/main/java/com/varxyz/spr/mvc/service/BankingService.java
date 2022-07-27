@@ -13,10 +13,10 @@ public interface BankingService {
 	boolean addCustomer(Customer customer);
 	
 	// 신규계좌가입
-	Account addAccount(char accType, String userId);
+	Account addAccount(char accType, String userId, double balance);
 	
 	// 계좌목록확인
-	List<Account> getAccounts(String userId);
+	List<Account> getAccounts(long cid);
 	
 	// 계좌이체
 	boolean transfer(double amount, String withdrawAccountNum, String depositAccountNum);
@@ -25,5 +25,7 @@ public interface BankingService {
 	boolean saveInterest(double interestRate, String AccountNum);
 	
 	// 계좌잔고확인
-	String getBalance(String AccountNum);
+	double getBalance(String AccountNum);
+
+	double replaceOverdraftAmount(String accountNum, double amount);
 }

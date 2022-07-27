@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.*;
 
 import org.apache.tomcat.jdbc.pool.DataSource;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCreator;
 import org.springframework.jdbc.core.RowMapper;
@@ -43,22 +44,19 @@ public class CustomerDao {
 		});
 	}
 
-	public List<Map<String,String>> isValidCustomer(String userId, String passwd) {
-		System.out.println(userId);
-		System.out.println(passwd);
+	public Customer isValidCustomer(String userId, String passwd) {
 		String sql = "SELECT userId, passwd FROM Customer WHERE userId=?";
-		Map<String,String> map = new HashMap<String, String>();
-		return jdbcTemplate.query(sql, new RowMapper<Map<String,String>>() {
+		
+		return jdbcTemplate.queryForObject(sql, new RowMapper<Customer>() {
 
 			@Override
-			public Map<String, String> mapRow(ResultSet rs, int rowNum) throws SQLException {
-				while(rs.next()) {	
-//					map.put("userId", rs.getString("userId"));
-//					map.put("passwd", rs.getString("passwd"));
-				}
-				return map;
+			public Customer mapRow(ResultSet rs, int rowNum) throws SQLException {
+				Customer customer = new Customer(rs.getString("userId"), rs.getString("passwd"));
+				return customer;
 			}
+			
 		}, userId);
+		
 	}
 
 	public Customer getCidByUserId(String userId) {
@@ -72,5 +70,11 @@ public class CustomerDao {
 			}
 			
 		}, userId);
+	}
+	
+	public Customer findCustomerByUserId(String userId) {
+		String sql = "SELECT cid, userId, passwd, name, ssn, phone FROM Customer WHERE userId=?";
+		
+		return jdbcTemplate.queryForObject(sql, new BeanPropertyRowMapper<Customer>(Customer.class), userId);
 	}
 }

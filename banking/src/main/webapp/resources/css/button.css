@@ -18,7 +18,7 @@
 	display: flex;
 	justify-content: center;
 	height: 100%;
-	background: #417D7A;
+	background: #C9BBCF;
 	border-radius: 30px;
 	width: 150px;
 	height: 50px;
@@ -45,4 +45,8 @@ button.btn-inner {
 
 .i-btn .in-btn:hover {
 	font-weight: normal;
+}
+.i-btn.btnmenuwrap {
+	width: 100%;	
+	margin-top: 20px;
 }

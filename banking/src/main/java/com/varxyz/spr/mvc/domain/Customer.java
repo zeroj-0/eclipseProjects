@@ -28,7 +28,15 @@ public class Customer {
 		this.phone = phone;
 	}
 
+	public Customer() {
+		super();
+	}
 	public Customer(long cid) {
 		this.cid = cid;
+	}
+
+	public Customer(String userId, String passwd) {
+		this.userId = userId;
+		this.passwd = passwd;
 	}
 }

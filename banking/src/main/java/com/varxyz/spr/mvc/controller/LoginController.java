@@ -29,6 +29,15 @@ public class LoginController {
 		if (!customerService.isValidUser(id, passwd)) {
 			return "domain/login";
 		}
-		return "/account/create_account";
+		HttpSession session = request.getSession(true);
+		long cid = customerService.getCidByUserId(id);
+		session.setAttribute("cid", cid);
+		session.setAttribute("userId", id);
+		return "domain/menuList";
+	}
+	
+	@GetMapping("/domain/menuList")
+	public String menuList() {
+		return "domain/menuList";
 	}
 }
