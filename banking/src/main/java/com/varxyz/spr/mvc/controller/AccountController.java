@@ -16,13 +16,17 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.varxyz.spr.mvc.domain.Account;
+import com.varxyz.spr.mvc.domain.Customer;
 import com.varxyz.spr.mvc.service.BankingService;
+import com.varxyz.spr.mvc.service.CustomerService;
 
 @Controller("controller.accountController")
 public class AccountController {
 	
 	@Autowired
 	private BankingService bankingService;
+	@Autowired
+	private CustomerService customerService;
 	
 	@GetMapping("/domain/create_account")
 	public String createAccount() {
@@ -85,8 +89,49 @@ public class AccountController {
 	}
 	
 	@PostMapping("/domain/transfer_account")
-	public void transferAccountBath(@RequestParam(value="myAccountNum", required = true) String myAccountNum, @RequestParam double amount, @RequestParam String otherAccountNum) {
-		bankingService.transfer(amount, myAccountNum, otherAccountNum);
+	public ModelAndView transferAccountBath(HttpServletRequest request, HttpServletResponse response, @RequestParam(value="myAccountNum", required = true) String myAccountNum, @RequestParam double amount, @RequestParam String otherAccountNum, @RequestParam String passwd) {
+		HttpSession session = request.getSession(false);
+		long cid = (long)session.getAttribute("cid");
+		String userId = (String)session.getAttribute("userId");
+		
+		List<Account> list = new ArrayList<>();
+		list = bankingService.getAccounts(cid);
+		ModelAndView mav = new ModelAndView();
+		if(customerService.findCustomerByUserId(userId).getPasswd().equals(passwd)) {
+			if(bankingService.transfer(amount, myAccountNum, otherAccountNum)) {
+				String str = "송금완료되었습니다! 남은 잔액 : ";
+				double balance = bankingService.getBalance(myAccountNum);
+				
+				mav.setViewName("domain/transfer_account");
+				mav.addObject("str", str);
+				mav.addObject("balance", balance);
+				mav.addObject("list", list);
+			} else {
+				response.setContentType("text/html; charset=UTF-8");
+				PrintWriter writer;
+				try {
+					writer = response.getWriter();
+					writer.println("<script>alert('잔액부족'); location.href='/banking/domain/menuList';</script>"); // 경고창 띄우기
+					writer.close(); 
+					
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+		} else {
+			response.setContentType("text/html; charset=UTF-8");
+			PrintWriter writer;
+			try {
+				writer = response.getWriter();
+				writer.println("<script>alert('비밀번호가 틀렸습니다'); location.href='/banking/domain/transfer_account';</script>"); // 경고창 띄우기
+				writer.close(); 
+				
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		return mav;
 	}
 	
 	@GetMapping("/domain/check_balance")
@@ -112,10 +157,13 @@ public class AccountController {
 		list = bankingService.getAccounts(cid);
 		double balance = bankingService.getBalance(accountNum);
 		
+		String str = " 안에 남은 잔액 : ";
+		
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("domain/check_balance");
 		mav.addObject("balance", balance);
 		mav.addObject("list", list);
+		mav.addObject("str", str);
 		mav.addObject("accountNum", accountNum);
 		
 		return mav;

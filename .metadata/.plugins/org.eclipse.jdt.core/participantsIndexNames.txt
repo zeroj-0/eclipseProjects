@@ -43,5 +43,7 @@ C:\JAVA_lgm\eclipse-workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsea
 \jv301\src\main\java
 C:\JAVA_lgm\eclipse-workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\299011016.index
 \jvx330\src\main\java
+C:\JAVA_lgm\eclipse-workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2147569932.index
+\banking\src\main\java
 C:\JAVA_lgm\eclipse-workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4179720924.index
 \spr\src\main\java

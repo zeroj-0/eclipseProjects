@@ -99,7 +99,7 @@ private JdbcTemplate jdbcTemplate;
 	}
 	
 	public Account getAccType(String accountNum) {
-		String sql = "SELECT accType, interestRate, overAmount FROM Account WHERE accountNum = ?";
+		String sql = "SELECT accountNum, customerId, accType, balance, interestRate, overAmount FROM Account WHERE accountNum = ?";
 		
 		return jdbcTemplate.queryForObject(sql, new RowMapper<Account>() {
 			
@@ -109,17 +109,30 @@ private JdbcTemplate jdbcTemplate;
 				if(rs.getString("accType").charAt(0) == 'C') {
 					account = new CheckingAccount();
 					CheckingAccount ca = (CheckingAccount) account;
+					ca.setAccountNum(rs.getString("accountNum"));
+					ca.setCustomerId(rs.getLong("customerId"));
+					ca.setBalance(rs.getDouble("balance"));
+					ca.setAccType(rs.getString("accType").charAt(0));
 					ca.setOverdraftAmount(rs.getDouble("overAmount"));
 					return ca;
 				} else {
 					account = new SavingAccount();
 					SavingAccount sa = (SavingAccount) account;
+					sa.setAccountNum(rs.getString("accountNum"));
+					sa.setCustomerId(rs.getLong("customerId"));
+					sa.setBalance(rs.getDouble("balance"));
+					sa.setAccType(rs.getString("accType").charAt(0));
 					sa.setInterestRate(rs.getDouble("interestRate"));
 					return sa;
 				}
 			}
 			
 		}, accountNum);
+	}
+	
+	public void reviseBalance(double balance, double overdraft, double interestRate, String accountNum) {
+		String sql = "UPDATE Account SET overAmount=?, interestRate=?, balance=? WHERE accountNum = ?";
+		jdbcTemplate.update(sql, overdraft, interestRate, balance, accountNum);
 	}
 	
 }

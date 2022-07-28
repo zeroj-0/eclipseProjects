@@ -27,16 +27,16 @@ public class CheckingAccount extends Account {
 		super();
 	}
 	
-	public double depostie(double amount, double balance) {
-		return amount+balance;
+	public void depostie(double amount) {
+		balance += amount;
 	}
 	
-	public double withdraw(double amount, double balance, double overdraftAmount) throws OverdraftException {
+	public double withdraw(double amount, double overdraftAmount) throws OverdraftException {
 		if (balance < amount) {
 			// 잔고부족시 overdraftAmount 금액 한도 내에서 추가 출금을 승인
 			double overdraftNeeded = amount - balance;
 			if ( overdraftAmount < overdraftNeeded ) {
-				throw new OverdraftException("에러 : 대월금 초과", balance, overdraftNeeded);
+				throw new OverdraftException("에러 : 잔액부족");
 			} else {
 				balance = 0.0;
 				overdraftAmount = overdraftAmount - overdraftNeeded;

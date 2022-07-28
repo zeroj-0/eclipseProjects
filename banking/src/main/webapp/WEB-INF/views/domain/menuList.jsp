@@ -32,6 +32,9 @@
             <div class="i-btn btnmenuwrap">
               <a href="/banking/domain/overdraftamount_replace" class="in-btn menulist">대출한도변경</a>
           </div>
+            <div class="i-btn btnmenuwrap">
+              <a href="/banking/domain/login" class="in-btn menulist">로그아웃</a>
+          </div>
           </div>
       </div>
     </div>

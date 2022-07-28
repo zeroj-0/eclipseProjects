@@ -30,4 +30,8 @@ public class CustomerService {
 	public long getCidByUserId(String userId) {
 		return customerDao.getCidByUserId(userId).getCid();
 	}
+	
+	public Customer findCustomerByUserId(String userId) {
+		return customerDao.findCustomerByUserId(userId);
+	}
 }
