@@ -10,10 +10,12 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.varxyz.spr.mvc.domain.Account;
 import com.varxyz.spr.mvc.domain.Customer;
@@ -64,7 +66,7 @@ public class AccountController {
 		String userId = (String)session.getAttribute("userId");
 		
 		List<Account> list = new ArrayList<>();
-		list = bankingService.getAccounts(cid);
+		list = bankingService.getAccounts(cid, userId);
 		
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("domain/accountList");
@@ -80,7 +82,7 @@ public class AccountController {
 		String userId = (String)session.getAttribute("userId");
 		
 		List<Account> list = new ArrayList<>();
-		list = bankingService.getAccounts(cid);
+		list = bankingService.getAccounts(cid, userId);
 		
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("domain/transfer_account");
@@ -89,23 +91,22 @@ public class AccountController {
 	}
 	
 	@PostMapping("/domain/transfer_account")
-	public ModelAndView transferAccountBath(HttpServletRequest request, HttpServletResponse response, @RequestParam(value="myAccountNum", required = true) String myAccountNum, @RequestParam double amount, @RequestParam String otherAccountNum, @RequestParam String passwd) {
+	public String transferAccountBath(RedirectAttributes redirect, HttpServletRequest request, HttpServletResponse response, @RequestParam(value="myAccountNum", required = true) String myAccountNum, @RequestParam double amount, @RequestParam String otherAccountNum, @RequestParam String passwd) {
 		HttpSession session = request.getSession(false);
 		long cid = (long)session.getAttribute("cid");
 		String userId = (String)session.getAttribute("userId");
 		
-		List<Account> list = new ArrayList<>();
-		list = bankingService.getAccounts(cid);
-		ModelAndView mav = new ModelAndView();
+//		List<Account> list = new ArrayList<>();
+//		list = bankingService.getAccounts(cid, userId);
+		
 		if(customerService.findCustomerByUserId(userId).getPasswd().equals(passwd)) {
 			if(bankingService.transfer(amount, myAccountNum, otherAccountNum)) {
 				String str = "송금완료되었습니다! 남은 잔액 : ";
 				double balance = bankingService.getBalance(myAccountNum);
 				
-				mav.setViewName("domain/transfer_account");
-				mav.addObject("str", str);
-				mav.addObject("balance", balance);
-				mav.addObject("list", list);
+				redirect.addAttribute("str", str);
+				redirect.addAttribute("balance", balance);
+				redirect.addAttribute("myAccountNum", myAccountNum);
 			} else {
 				response.setContentType("text/html; charset=UTF-8");
 				PrintWriter writer;
@@ -131,7 +132,14 @@ public class AccountController {
 			}
 		}
 		
-		return mav;
+		return "redirect:/domain/transfer_success";
+	}
+	@GetMapping("/domain/transfer_success")
+	public String transferSuccess(@RequestParam(value="str") String str, @RequestParam(value="balance") double balance, @RequestParam(value="myAccountNum") String accountNum, Model model) {
+		model.addAttribute("str", str);
+		model.addAttribute("balance", balance);
+		model.addAttribute("myAccountNum", accountNum);
+		return "domain/transfer_success";
 	}
 	
 	@GetMapping("/domain/check_balance")
@@ -141,7 +149,7 @@ public class AccountController {
 		String userId = (String)session.getAttribute("userId");
 		
 		List<Account> list = new ArrayList<>();
-		list = bankingService.getAccounts(cid);
+		list = bankingService.getAccounts(cid, userId);
 		
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("domain/check_balance");
@@ -154,7 +162,8 @@ public class AccountController {
 		HttpSession session = request.getSession(false);
 		long cid = (long)session.getAttribute("cid");
 		List<Account> list = new ArrayList<>();
-		list = bankingService.getAccounts(cid);
+		String userId = (String)session.getAttribute("userId");
+		list = bankingService.getAccounts(cid, userId);
 		double balance = bankingService.getBalance(accountNum);
 		
 		String str = " 안에 남은 잔액 : ";
@@ -173,8 +182,9 @@ public class AccountController {
 	public ModelAndView overdraftamountReplaceSelect(HttpServletRequest request) {
 		HttpSession session = request.getSession(false);
 		long cid = (long)session.getAttribute("cid");
+		String userId = (String)session.getAttribute("userId");
 		List<Account> list = new ArrayList<>();
-		list = bankingService.getAccounts(cid);
+		list = bankingService.getAccounts(cid, userId);
 		
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("domain/overdraftamount_replace");

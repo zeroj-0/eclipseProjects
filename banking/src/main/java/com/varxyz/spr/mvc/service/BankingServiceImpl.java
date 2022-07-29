@@ -1,9 +1,11 @@
 package com.varxyz.spr.mvc.service;
 
-import java.util.List;
+import java.sql.SQLException;
+import java.util.*;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.varxyz.spr.mvc.domain.Account;
 import com.varxyz.spr.mvc.domain.CheckingAccount;
@@ -23,9 +25,10 @@ public class BankingServiceImpl implements BankingService {
 	private AccountDao accountDao;
 
 	@Override
-	public boolean addCustomer(Customer customer) {
+	public boolean addCustomer(String userId, String passwd, String name, String ssn, String phone) {
+		Customer customer = new Customer(userId, passwd, name, ssn, phone);
 		customerDao.addCustomer(customer);
-		return false;
+		return true;
 	}
 
 	@Override
@@ -60,11 +63,12 @@ public class BankingServiceImpl implements BankingService {
 	}
 
 	@Override
-	public List<Account> getAccounts(long cid) {
+	public List<Account> getAccounts(long cid, String userId) {
 		return accountDao.getAccounts(cid);
 	}
 
 	@Override
+	@Transactional
 	public boolean transfer(double amount, String withdrawAccountNum, String depositAccountNum) {
 		// 첫번째 계좌가 출금하는 계좌
 		// 두번째 계좌가 입금되는 계좌

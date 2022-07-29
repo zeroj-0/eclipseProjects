@@ -35,7 +35,7 @@
 							<input type="text" name="amount" placeholder="이체하실 금액"/>
 						</div>
 						<div class="add">
-							<input type="password" name="passwd" placeholder="바밀번호"/>
+							<input type="password" name="passwd" placeholder="비밀번호"/>
 						</div>
 						<div class="i-btn account">
 							<input type="submit" value="이체" class="in-btn"/>

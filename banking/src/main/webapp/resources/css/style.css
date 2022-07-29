@@ -322,11 +322,22 @@ select.account_selec, select.account_selec option {
 	height: 100%;
 	align-items: flex-start;
 }
+.content.balance_check.accountNum{
+	flex-wrap : wrap;
+	height: 80px;
+}
 .content.balance_check .text-wrap{
 	font-size: 18px;
 	margin-top: 20px;
+	flex-wrap : wrap;
+	width: 100%;
+	text-align: center;
 }
 .content.balance_check .text-wrap > span{
 	font-size: 20px;
 	color: red;
+}
+.content.balance_check .text-wrap.accountNum{
+	width: 100%;
+	text-align: center;
 }

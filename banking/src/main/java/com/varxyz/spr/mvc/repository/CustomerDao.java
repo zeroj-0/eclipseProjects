@@ -24,7 +24,7 @@ public class CustomerDao {
 		jdbcTemplate = new JdbcTemplate(dataSource);
 	}
 	
-	public void addCustomer(Customer customer) {
+	public void addCustomer(Customer customer){
 		String sql = "INSERT INTO Customer (userId, passwd, name, ssn, phone) VALUES (?,?,?,?,?)";
 		
 		jdbcTemplate.update(new PreparedStatementCreator() {
