@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- property 없이 의존관계를 자동으로 autowire= byname은 속성임!!!! -->
+	<bean name="byNameClient" class="com.varxyz.jvx330.di.example4.ex1.ByNameClient" autowire="byName"/>
+	
+	<bean name="jmsNamingService" class="com.varxyz.jvx330.di.example4.ex1.JmsNamingServiceImpl"/>
+	<bean name="dmsNamingService" class="com.varxyz.jvx330.di.example4.ex1.DmsNamingServiceImpl"/>
+	
+</beans>

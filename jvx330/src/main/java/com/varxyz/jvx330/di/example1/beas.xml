@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean name="foo" class="com.varxyz.jvx330.di.example1.Foo">
+		<!-- 생성자의 아규먼트를 받는것이 있다 -->
+		<constructor-arg ref="bar"/>
+	</bean>
+	<bean name="foo2" class="com.varxyz.jvx330.di.example1.Foo">
+		<!-- 생성자 태그 사용하지 않으면 아규먼트가 없는 생성자를 자동으로 만듬(default생성자) -->
+		<!-- name은 자바빈즈중에 property(set/get 합쳐서) 이름이 bar인것을 찾는 것 -->
+		<property name="bar" ref="bar"/>
+	</bean>
+	
+	<bean name="bar" class="com.varxyz.jvx330.di.example1.Bar"/>
+
+</beans>
