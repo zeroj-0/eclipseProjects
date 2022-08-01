@@ -12,7 +12,6 @@ INDEX VERSION 1.131+C:\JAVA_lgm\eclipse-workspace\.metadata\.plugins\org.eclipse
 911480459.index
 4252357044.index
 492926448.index
-272884222.index
 4243645384.index
 2203585265.index
 1274340969.index
@@ -21,7 +20,6 @@ INDEX VERSION 1.131+C:\JAVA_lgm\eclipse-workspace\.metadata\.plugins\org.eclipse
 4203332217.index
 3387735712.index
 781675358.index
-1429763547.index
 4099881575.index
 497107840.index
 3475290349.index
