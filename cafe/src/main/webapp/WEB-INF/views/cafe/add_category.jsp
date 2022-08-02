@@ -10,10 +10,10 @@
 <body>
 <h3>카테고리 등록</h3>
 <form:form method="post" modelAttribute="menuCategory">
-		<form:input path="name" placeholder="상품명"/><br>
-		<form:input path="cost" placeholder="가격"/><br>
-		<input type="file" name="imgURL"/><br>
+		<form:input path="mainTitle" placeholder="대분류"/><br>
+		<form:input path="subTitle" placeholder="소분류"/><br>
 		<input type="submit" value="등록하기"/>
+		<a href="/cafe/">돌아가기</a>
 	</form:form>
 </body>
 </html>
