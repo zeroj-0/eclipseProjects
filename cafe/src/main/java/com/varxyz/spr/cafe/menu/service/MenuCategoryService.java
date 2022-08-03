@@ -26,6 +26,7 @@ public class MenuCategoryService {
 	
 	public void addCategory(MenuCategoryCommand menuCategory) {
 		menuCategoryRepository.addCategory(menuCategory);
+		categoryCashService.checkList(menuCategory);
 	}
 	
 	public List<MenuCategory> getMenuCategory() {
@@ -38,7 +39,6 @@ public class MenuCategoryService {
 	public MenuCategory getCidByMainTitleSubTitle(String mainTitle, String subTitle) {
 		List<MenuCategory> categoryList = categoryCashService.getCategories();
 		for(MenuCategory category : categoryList) {
-			System.out.println(category.getMainTitle());
 			if(category.getMainTitle().equals(mainTitle) && category.getSubTitle().equals(subTitle)) {
 				return category;
 			}

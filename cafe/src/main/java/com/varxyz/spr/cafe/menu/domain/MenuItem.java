@@ -15,4 +15,17 @@ public class MenuItem {
 	private String explanation;
 	private MenuCategory category;
 	private Date regDate;
+	
+	public MenuItem() {}
+
+	public MenuItem(long mid, String name, double cost, String imgURL, String explanation, MenuCategory category) {
+		super();
+		this.mid = mid;
+		this.name = name;
+		this.cost = cost;
+		this.imgURL = imgURL;
+		this.explanation = explanation;
+		this.category = category;
+	};
+	
 }

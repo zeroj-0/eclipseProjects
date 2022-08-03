@@ -10,6 +10,6 @@
 <c:forEach var="err" items="${error}">
 ${err}
 </c:forEach>
-<a href="/cafe/">돌아가기</a>
+<a href="/cafe/management">돌아가기</a>
 </body>
 </html>

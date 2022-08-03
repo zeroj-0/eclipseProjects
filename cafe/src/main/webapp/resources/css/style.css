@@ -1,0 +1,451 @@
+@charset "UTF-8";
+
+@font-face {
+	src: url("/cafe/resources/css/okbi.ttf");
+	font-family: "okbi";
+}
+@font-face {
+	src: url("/cafe/resources/css/sehwa.ttf");
+	font-family: "sehwa";
+}
+
+section {
+	height: 100%;
+	overflow: hidden;
+}
+section.main, section.subPage {
+	display: flex;
+	align-items: center;
+}
+.container {
+	display: flex;
+	flex-wrap: wrap;
+	height: 100%;
+	width: 700px;
+	margin: 0 auto;
+	align-items: center;
+}
+.container.main-container {
+	background: #FAF0D7;
+	height: 80%;
+	box-shadow: 8px 5px 5px 10px #f1f1f1;
+}
+.container.main-container.sub-manage {
+	height: 88%;
+}
+
+.container.main-container .title-wrap {
+	display: flex;
+	height: 22%;
+	width: 100%;
+	align-items: flex-end;
+	justify-content: center;
+	border-bottom: 5px solid #fff;
+	padding-bottom: 10px;
+}
+
+.container.main-container .title-wrap .title {	
+	font-size: 90px;
+	text-align: center;
+	padding: 0 8px;
+	position: relative;
+	font-family: "okbi";
+	color: #F4BFBF;
+}
+
+.container>.btn-wrap {
+	display: flex;
+	height: 73%;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+}
+.container>.btn-wrap.manag {
+	display: flex;
+	height: calc((100% / 3) - 38px);
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+}
+.order-btn, .manag-btn {
+	width: 200px;
+	height: 200px;
+	text-align: center;
+	line-height: 200px;
+	font-size: 50px;
+	font-weight: bold;
+	background: #fff;
+}
+.manag-btn {
+	font-size: 40px;
+	width: 250px;
+	height: 140px;
+	line-height: 140px;
+}
+.management-btn-wrap {
+	width: 100%;
+	text-align: right;
+	padding: 5px 20px;
+}
+.management-btn-wrap.left {
+	text-align: left;
+}
+.managementPage {
+	font-size: 24px;
+	font-weight: bold;
+}
+
+/* 카테고리 등록 페이지 */
+.container.main-container.sub-manage .subtitle-wrap {
+	display: flex;
+	height: 10%;
+	width: 100%;
+	align-items: flex-end;
+	justify-content: center;
+	border-bottom: 3px solid #fff;
+	padding-bottom: 10px;
+}
+.container.main-container.sub-manage .subtitle-wrap .sub-title {	
+	font-size: 40px;
+	text-align: center;
+	padding: 0 8px;
+	position: relative;
+	font-family: "okbi";
+}
+.container>.form-wrap {
+	display: flex;
+	height: 90%;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	flex-wrap: wrap;
+}
+.form-wrap > form, .table-wrap {
+	width: 100%;
+}
+.content {
+	height: 50px;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 30px;
+	font-family: "sehwa";
+}
+
+.content>input {
+	height: 35px;
+	line-height: 35px;
+	padding-left: 5px;
+	width: 60%;
+	height: 50px;
+	font-size: 15px;
+}
+
+.content>input:focus {
+	outline: none;
+}
+
+.table-wrap > table {
+	width: 75%;
+	margin: 0 auto;
+	text-align: center;
+	border-collapse: collapse;
+	font-size: 25px;
+}
+
+.table-wrap > table tr {
+	height: 34px;
+	line-height: 34px;
+}
+.table-wrap > table tr td,th {
+	border: 1px solid #000;
+}
+.table-wrap > table tr th {
+	color: white;
+	background: #FFD9C0;
+}
+
+/* 상품 등록 페이지 */
+.content .subsub-title, .content > label {
+	font-size: 30px;
+}
+.subsub-title {
+	margin-right: 20px;
+}
+
+.content.menuItem {
+	flex-wrap: wrap;
+	padding: 0 80px;
+	justify-content: flex-start;
+}
+.content.menuItem:not(:first-child) {
+	margin-top: 5px;
+	height: 80px;
+}
+
+.content > label {
+	margin-right: 10px;
+}
+
+/* 버튼 */
+.btn-group {
+	display: flex;
+	width: 100%;
+	height: 50px;
+	margin-top: 30px;
+	justify-content: center;
+}
+
+.subpage-btn-wrap {
+	display: flex;
+	justify-content: space-around;
+	height: 100%;
+	width: 60%;
+}
+
+.subpage-btn-wrap > input {
+	justify-content: center;
+	border-style: none;
+	font-size: 30px;
+	background: #F4BFBF;
+	color: white;
+	border-radius: 30px;
+	width: 150px;
+	height: 50px;
+	cursor: pointer;
+	font-family: "okbi";
+}
+
+.subpage-btn-wrap>.btn {
+	font-size: 30px;
+	background: #F4BFBF;
+	color: white;
+	border-radius: 30px;
+	width: 150px;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	font-family: "okbi";
+}
+
+
+
+
+.gnb ul li a {
+	line-height: 70px;
+	font-size: 20px;
+	color: white;
+	font-family: "Jalnan";
+}
+
+
+
+
+
+
+
+
+.form-wrap> .login {
+	width: 100%;
+}
+
+
+.container > .content-wrapper {
+    display: flex;
+    height: 100%;
+    align-items: flex-start;
+    width: 100%;
+    padding: 0 80px;
+    flex-wrap: wrap;
+ }
+.container > #content-wrapper {
+    display: flex;
+    height: 100%;
+    align-items: flex-start;
+    width: 100%;
+    padding: 0 80px;
+    flex-wrap: wrap;
+ }
+
+.content h4 {
+	font-size: 18px;
+}
+
+.add_user {
+	padding-top: 20px;
+	width: 100%;
+}
+
+.add {
+	height: 60px;
+	width: 100%;
+	display: flex;
+	justify-content: left;
+	align-items: center;
+	margin-top: 10px;
+}
+
+.phone {
+	height: 60px;
+	flex-wrap: wrap;
+}
+
+.add>input {
+	width: 100%;
+	height: 45px;
+	line-height: 45px;
+	padding-left: 15px;
+	font-size: 16px;
+	font-family: "Jalnan";
+}
+
+.add>input:focus {
+	outline: none;
+	border-color: rgba(201, 187, 207, .6);
+	box-shadow: 0 0 6px 2px rgba(201, 187, 207, .6);
+}
+
+
+
+span.phoneNum_middle {
+	margin: 0 5px;
+}
+
+span.phone {
+	margin-top: 5px;
+	display: block;
+	text-align: right;
+	font-size: 13px;
+	color: red;
+	margin-left: 15px;
+	width: 100%;
+}
+
+.address1 {
+	width: 250px;
+	margin-right: 10px;
+}
+.user {
+	width :100%;
+	height: 60px;
+	line-height: 60px;
+	font-size: 20px;
+	text-align: center;
+	font-family: "Jalnan";
+}
+.userId {
+	font-size: 22px;
+	margin-right: 6px;
+	color: #898AA6;
+}
+
+
+
+
+
+.i-btn>.in-btn:hover {
+	font-weight: normal;
+}
+.i-btn.btnmenuwrap {
+	width: 100%;	
+	margin-top: 30px;
+}
+.i-btn > .in-btn.menulist {
+	font-size: 22px;
+	width: 200px;
+	height: 60px;
+	line-height: 60px;
+	letter-spacing: 0.3rem;
+}
+
+.i-btn > .in-btn.check {
+	height: 30px;
+	line-height: 30px;
+	font-size: 16px;
+}
+
+/*
+	계좌리스트 확인 페이지
+*/
+.accountListCheck  .i-btn.check{
+	margin: 0 auto;
+}
+.content.checkList {
+	height: 100%;
+	align-items: flex-start;
+}
+.content.checkList > table {
+	width: 100%;
+	text-align: center;
+	border-collapse: collapse;
+}
+.content.checkList > table tr {
+	height: 60px;
+	line-height: 60px;
+	font-size: 18px;
+}
+.content.checkList > table tr td,th {
+	border: 1px solid #000;
+}
+.content.checkList > table tr th {
+	color: white;
+	background: #C9BBCF;
+}
+
+/*
+	통장 개설페이지
+*/
+.content.account {
+	height: 100%;
+	align-items: flex-start;
+	margin-top: 45px;
+}
+.add>select.account_selec:focus {
+	outline: none;
+	border-color: rgba(201, 187, 207, .6);
+	box-shadow: 0 0 6px 2px rgba(201, 187, 207, .6);
+}
+
+select.account_selec {
+	height: 45px;
+	width: 100%;
+	padding-left: 10px;
+}
+select.account_selec, select.account_selec option {
+	font-family: "Jalnan";
+	font-size: 16px;
+}
+.i-btn.account {
+	width: 100%;
+	margin-top: 25px;
+}
+/*
+	계좌이체 페이지
+*/
+.content.account.balance_check {
+	flex-wrap: wrap;
+}
+.content.balance_check {
+	height: 100%;
+	align-items: flex-start;
+}
+.content.balance_check.accountNum{
+	flex-wrap : wrap;
+	height: 80px;
+}
+.content.balance_check .text-wrap{
+	font-size: 18px;
+	margin-top: 20px;
+	flex-wrap : wrap;
+	width: 100%;
+	text-align: center;
+}
+.content.balance_check .text-wrap > span{
+	font-size: 20px;
+	color: red;
+}
+.content.balance_check .text-wrap.accountNum{
+	width: 100%;
+	text-align: center;
+}

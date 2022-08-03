@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.varxyz.spr.cafe.menu.domain.MenuCategory;
+import com.varxyz.spr.cafe.menu.domain.MenuCategoryCommand;
 import com.varxyz.spr.cafe.menu.repository.MenuCategoryRepository;
 
 @Component("categoryCashService")
@@ -23,6 +24,17 @@ public class CategoryCashService {
 	@PostConstruct
 	public void initialize() {
 		menuCategoryList = menuCategoryRepository.getMenuCategory();
+	}
+	
+	public void checkList(MenuCategoryCommand menuCategory) {
+		for(MenuCategory category : menuCategoryList) {
+			if(!category.getMainTitle().equals(menuCategory.getMainTitle())) {
+				menuCategoryList = menuCategoryRepository.getMenuCategory();				
+			}
+			if(!category.getSubTitle().equals(menuCategory.getSubTitle())) {
+				menuCategoryList = menuCategoryRepository.getMenuCategory();				
+			}
+		}
 	}
 	
 	// 리스트.contains로 카테고리 있는지 확인 반복!

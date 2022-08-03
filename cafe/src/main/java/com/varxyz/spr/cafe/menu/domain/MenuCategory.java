@@ -25,4 +25,8 @@ public class MenuCategory {
 		this.mainTitle = mainTitle;
 		this.subTitle = subTitle;
 	}
+	public MenuCategory(long cid) {
+		super();
+		this.cid = cid;
+	}
 }

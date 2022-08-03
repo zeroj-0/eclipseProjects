@@ -28,13 +28,15 @@ public class AddMenuCategoryController {
 	@Autowired
 	private CategoryContainer categoryContainer;
 	
-	@GetMapping("/add_category")
+	@GetMapping("/management/add_category")
 	public String addCategoryForm(Model model) {
+		List<MenuCategory> menuCategList = menuCategoryService.getMenuCategory();
 		model.addAttribute("menuCategory", new MenuCategoryCommand());
-		return "cafe/add_category";
+		model.addAttribute("menuCategoryList", menuCategList);
+		return "cafe/management/add_category";
 	}
 	
-	@PostMapping("/add_category")
+	@PostMapping("/management/add_category")
 	public String addCategory(HttpSession session, HttpServletResponse response, Model model, @ModelAttribute("menuCategory")MenuCategoryCommand menuCategory) {
 		List<String> err = new ArrayList<String>();
 		if(menuCategory.getMainTitle() == null || menuCategory.getMainTitle().length() == 0) {
@@ -46,18 +48,17 @@ public class AddMenuCategoryController {
 		
 		if(err.size() > 0) {
 			model.addAttribute("error", err);
-			return "error/category";
+			return "/error/category";
 		}
 		
 		menuCategoryService.addCategory(menuCategory);
 		categoryContainer.setCategoryList(menuCategoryService.getMenuCategory());
-//		List<MenuCategory> categoryList = menuCategoryService.getMenuCategory();
 		session.setAttribute("categoryList", categoryContainer.getCategoryList());
 		response.setContentType("text/html; charset=UTF-8");
 		PrintWriter writer;
 		try {
 			writer = response.getWriter();
-			writer.println("<script>alert('정상처리 되었습니다.');location.href='/cafe/';</script>"); // 경고창 띄우기
+			writer.println("<script>alert('정상처리 되었습니다.');location.href='/cafe/management/add_category';</script>"); // 경고창 띄우기
 			writer.close();
 		} catch (IOException e) {
 			e.printStackTrace();
