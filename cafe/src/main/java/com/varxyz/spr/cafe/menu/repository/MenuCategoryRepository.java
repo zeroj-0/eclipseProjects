@@ -31,8 +31,13 @@ public class MenuCategoryRepository {
 	}
 	
 	public List<MenuCategory> getMenuCategoryMainTitle() {
-		String sql = "SELECT cid, mainTitle, subTitle FROM Category GROUP BY mainTitle";
+		String sql = "SELECT ANY_VALUE(cid) AS cid, mainTitle, ANY_VALUE(subTitle) AS subTItle FROM Category GROUP BY mainTitle";
 		return jdbcTemplate.query(sql, new MenuCategoryRowMapper());
+	}
+	
+	public MenuCategory getMenuCategoryByCid(long cid) {
+		String sql = "SELECT cid, mainTitle, subTitle FROM Category WHERE cid = ?";
+		return jdbcTemplate.queryForObject(sql, new MenuCategoryRowMapper(), cid);
 	}
 
 }

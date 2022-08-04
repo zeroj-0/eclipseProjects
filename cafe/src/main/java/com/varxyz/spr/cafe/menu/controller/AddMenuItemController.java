@@ -123,7 +123,9 @@ public class AddMenuItemController {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		return "/cafe/management/menuItem";
+		return "/cafe/management/add_menuItem";
 	}
+	
+	
 
 }

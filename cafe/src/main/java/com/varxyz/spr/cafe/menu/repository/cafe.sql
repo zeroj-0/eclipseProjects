@@ -9,6 +9,8 @@ CREATE TABLE Category(
 CREATE TABLE MenuItem(
 	mid					BIGINT					PRIMARY KEY			AUTO_INCREMENT,
 	cid					BIGINT					NOT NULL,
+	mainTitle		VARCHAR(20)		NOT NULL,
+	subTitle			VARcHAR(20)		NOT NULL,
 	name				VARCHAR(20)		NOT NULL,
 	cost					DOUBLE						NOT NULL,
 	imgURL			VARCHAR(100)		NOT NULL,
@@ -21,3 +23,9 @@ CREATE TABLE MenuItem(
 DROP TABLE MenuItem;
 SELECT cid, mainTitle, subTitle FROM Category GROUP BY mainTitle;
 SELECT cid, mainTitle, subTitle FROM Category ORDER BY mainTitle DESC;
+
+SELECT mid, cid, name, cost, imgURL, explanation FROM MenuItem ORDER BY cid;
+
+ALTER TABLE MenuItem ADD mainTitle VARCHAR(20)	NOT NULL;
+ALTER TABLE MenuItem ADD subTitle VARCHAR(20)	NOT NULL;
+SELECT mid, cid, mainTitle, name, cost, imgURL, explanation FROM MenuItem ORDER BY mainTitle DESC;

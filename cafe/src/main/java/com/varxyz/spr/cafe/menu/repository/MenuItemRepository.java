@@ -20,12 +20,12 @@ private JdbcTemplate jdbcTemplate;
 	}
 
 	public void addMenuItem(MenuItemCommand menuItem) {
-		String sql = "INSERT INTO MenuItem (cid, name, cost, imgURL, explanation) VALUES (?,?,?,?,?)";
-		jdbcTemplate.update(sql, menuItem.getMenucategory().getCid(), menuItem.getName(), menuItem.getCost(), menuItem.getImgURL(), menuItem.getExplanation());
+		String sql = "INSERT INTO MenuItem (cid, mainTitle, subTitle, name, cost, imgURL, explanation) VALUES (?,?,?,?,?,?,?)";
+		jdbcTemplate.update(sql, menuItem.getMenucategory().getCid(), menuItem.getMainTitle(), menuItem.getSubTitle(), menuItem.getName(), menuItem.getCost(), menuItem.getImgURL(), menuItem.getExplanation());
 	}
 
 	public List<MenuItem> getMenuItems() {
-		String sql = "SELECT mid, cid, name, cost, imgURL, explanation FROM MenuItem";
+		String sql = "SELECT mid, cid, name, cost, imgURL, explanation FROM MenuItem ORDER BY mainTitle DESC";
 		return jdbcTemplate.query(sql, new MenuItemRowMapper());
 	}
 	

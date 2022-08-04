@@ -86,6 +86,7 @@ section.main, section.subPage {
 	width: 100%;
 	text-align: right;
 	padding: 5px 20px;
+	height: 5%;
 }
 .management-btn-wrap.left {
 	text-align: left;
@@ -229,6 +230,110 @@ section.main, section.subPage {
 	font-family: "okbi";
 }
 
+
+/* 상품페이지 */
+.container.main-container.sub-order {
+	height: 90%;
+	width: 830px;
+	position: relative;
+}
+.sub-order .category-wrap {
+	width: 100%;
+	height: 11%;
+	position: absolute;
+	top: 0;
+}
+.maincategory-wrap, .subcategory-wrap {
+	height: 50%;
+	border-bottom: 1px solid #fff;
+}
+.category {
+	height: 100%;
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: nowrap;
+}
+.category li {
+	width: 100%;
+	text-align: center;
+	height: 100%;
+	border-left: 1px solid #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.category li.on {
+	background: #fff;
+}
+.category li.on a.category-txt{
+	background: #fff;
+	color: #FFD9C0;
+}
+.category li:hover {
+	background: #fff;
+
+}
+.category li:hover a.category-txt{
+	color: #FFD9C0;
+}
+.category li:first-child {
+	border-left: none;
+}
+.category li a.category-txt {
+	font-size: 25px;
+	font-weight: bold;
+	width: 100%;
+	text-align: center;
+}
+.menuItem-wrap {
+	position: absolute;
+	bottom: 0;
+	overflow: scroll;
+	height: 89%;
+	width: 100%;
+	-ms-overflow-style: none;
+    scrollbar-width: none;
+}
+.menuItem-wrap::-webkit-scrollbar {
+	display: none;
+}
+.menuItem-box-wrap {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	padding: 0 5px;
+}
+.memuItem-box {
+	border: 1px solid #fff;
+	padding: 5px 5px;
+	margin: 10px 5px 0 5px;
+	width: calc(25% - 10px);
+}
+.memuItem-box a{
+	display: block;
+	width: 100%;
+	height: 150px;
+	text-align: center;
+	padding-top: 5px;
+	margin-bottom: 5px;
+}
+.memuItem-box a ~ p{
+	padding: 0 calc((100% - 160px)/2);
+	font-size: 18px;
+	font-weight: 600;
+	text-align: center;
+}
+.memuItem-box a + p{
+	font-size: 20px;
+}
+.memuItem-box a ~  p:last-child{
+	font-size: 15px;
+}
+img.img {
+	width: 160px;
+	height: 150px;
+	margin: 0 auto;
+}
 
 
 
