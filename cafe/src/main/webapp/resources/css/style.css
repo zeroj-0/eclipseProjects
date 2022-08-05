@@ -159,7 +159,7 @@ section.main, section.subPage {
 	height: 34px;
 	line-height: 34px;
 }
-.table-wrap > table tr td,th {
+.table-wrap > table tr td,.table-wrap > table tr th {
 	border: 1px solid #000;
 }
 .table-wrap > table tr th {
@@ -242,6 +242,7 @@ section.main, section.subPage {
 	height: 11%;
 	position: absolute;
 	top: 0;
+	z-index: 30;
 }
 .maincategory-wrap, .subcategory-wrap {
 	height: 50%;
@@ -335,7 +336,32 @@ img.img {
 	margin: 0 auto;
 }
 
+.cart-wrap {
+	position: absolute;
+	bottom: 0;
+	z-index: 10;
+	height: 15%;
+	width: 100%;
+	overflow: scroll;
+	background: #FAF0D7;
+	-ms-overflow-style: none;
+ 	 scrollbar-width: none;
+ 	 border-top : 1px solid #000;
+ 	 display: none;
+}
+.cart-wrap::-webkit-scrollbar {
+	display: none;
+}
 
+/* 카트 부분 */
+.cart-title, .e {
+	font-size: 24px;
+	font-weight: bold;
+	padding-left: 20px;
+}
+.e {
+	font-size: 20px;
+}
 
 .gnb ul li a {
 	line-height: 70px;
@@ -343,9 +369,6 @@ img.img {
 	color: white;
 	font-family: "Jalnan";
 }
-
-
-
 
 
 
@@ -490,7 +513,7 @@ span.phone {
 	line-height: 60px;
 	font-size: 18px;
 }
-.content.checkList > table tr td,th {
+.content.checkList > table tr td,.content.checkList > table tr th {
 	border: 1px solid #000;
 }
 .content.checkList > table tr th {

@@ -5,6 +5,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.core.JdbcTemplate;
 
+import com.varxyz.spr.cafe.menu.domain.Cart;
+
 @Configuration
 public class DataSourceConfig {
 	
@@ -30,4 +32,8 @@ public class DataSourceConfig {
 		return new JdbcTemplate(dataSource());
 	}
 	
+	@Bean
+	public Cart cart() {
+		return new Cart();
+	}
 }
