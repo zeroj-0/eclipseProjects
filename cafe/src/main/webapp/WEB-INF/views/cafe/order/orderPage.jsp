@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>제로카페</title>
 <link rel="stylesheet" type="text/css" href="<c:url value='/resources/css/default.css'/>"/>
 <link rel="stylesheet" type="text/css" href="<c:url value='/resources/css/style.css'/>"/>
 </head>
@@ -63,22 +63,27 @@
 		</div>
 		<div class="cart-wrap">
 			<div class="cart-title">장바구니</div>
-			<table>
-				<tr>
-					<th><span class="e">상품명</span></th><th><span class="e">수량</span></th><th><span class="e">가격</span></th>
-				</tr>
-				<c:forEach var="lineItem" items="${lineItemList }">
+			<form action="/cafe/order/success" method="post">
+				<table class="cart-table">
 					<tr>
-						<td><span class="e">${lineItem.menuItem.name}</span></td>
-						<td><span class="e">${lineItem.count }</span></td>
-						<td><span class="e">${lineItem.eachPrice}</span> </td>
-						<td><span class="e"><a href="/cafe/order/${lineItem.menuItem.category.mainTitle}/${lineItem.menuItem.category.subTitle}/${lineItem.menuItem.mid}/${lineItem.menuItem.mid}">삭제</a></span></td>
+						<th><span class="e">상품명</span></th><th><span class="e">수량</span></th><th><span class="e">가격</span></th>
 					</tr>
-				</c:forEach>
-				
-			</table>
-			<div>
-			</div>
+					<c:forEach var="lineItem" items="${lineItemList }">
+						<tr>
+							<td><span class="e"><input name="menuItemName" value="${lineItem.menuItem.name}" class="in"/>${lineItem.menuItem.name}</span></td>
+							<td><span class="e"><input name="menuItemCount" value="${lineItem.count }" class="in"/>${lineItem.count }</span></td>
+							<td><span class="e"><input name="menuItemPrice" value="${lineItem.eachPrice}" class="in"/>${lineItem.eachPrice}</span> </td>
+							<td><span class="e"><a href="/cafe/order/${lineItem.menuItem.category.mainTitle}/${lineItem.menuItem.category.subTitle}/${lineItem.menuItem.mid}/${lineItem.menuItem.mid}">삭제</a></span></td>
+						</tr>
+					</c:forEach>
+				</table>
+				<div class="cart-wrap-btn">
+					<input type="submit" value="주문하기"/>
+				</div>
+			</form>
+		</div>
+		<div class="home-btn-wrap">
+			<a href="/cafe/" class="home-btn">홈</a>
 		</div>
 	</div>
 </section>
@@ -128,8 +133,37 @@
 		});
 	}
 
+
+	let tableLength = document.getElementsByClassName("cart-table")[0].children[0].children.length;
+
+	if(tableLength == 1) {
+		let cartwrap = document.getElementsByClassName("cart-wrap")[0];
+		cartwrap.style.display = 'none';
+	}
+
+	let inputForm = document.getElementsByClassName("in");
+
+	Array.prototype.forEach.call(inputForm, (item,i) => {
+		item.style.display='none';
+	});
 	
+	let cartTable = document.getElementsByClassName("cart-table")[0].children[0].children;
+	console.log(cartTable);
+	let cartTablel = cartTable.length-2;
+	console.log(cartTablel);
+	if(cartTable.length >= 2) {
+		let i = document.createElement('input');
+		i.setAttribute("name", "lineItemCount");
+		i.setAttribute("value", cartTablel);
+		i.setAttribute("class", "lineItemCount");
+		
+		let address = document.getElementsByClassName("cart-wrap-btn")[0];
+		address.appendChild(i);
+	}
 	
+	let a = document.getElementsByClassName("lineItemCount")[0];
+	a.style.display = 'none';
+
 </script>
 </body>
 </html>

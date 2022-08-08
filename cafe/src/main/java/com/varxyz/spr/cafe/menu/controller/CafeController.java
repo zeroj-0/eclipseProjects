@@ -5,9 +5,8 @@ import java.util.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.varxyz.spr.cafe.menu.domain.Cart;
@@ -17,6 +16,8 @@ import com.varxyz.spr.cafe.menu.domain.MenuItem;
 import com.varxyz.spr.cafe.menu.service.CartService;
 import com.varxyz.spr.cafe.menu.service.MenuCategoryService;
 import com.varxyz.spr.cafe.menu.service.MenuService;
+
+import javax.servlet.http.HttpServletRequest;
 
 @Controller("menu.controller.cafeController")
 public class CafeController {
@@ -166,5 +167,22 @@ public class CafeController {
 		model.addAttribute("imgPath", SAVE_DIR);
 		
 		return "cafe/order/orderPage";
+	}
+
+	@PostMapping("/order/success")
+	public ModelAndView orderPageSuccess(HttpServletRequest request) {
+		String name = request.getParameter("menuItemName");
+		String count = request.getParameter("menuItemCount");
+		String price = request.getParameter("menuItemPrice");
+		String lineItemCount = request.getParameter("lineItemCount");
+
+
+		ModelAndView mav = new ModelAndView();
+
+		mav.addObject("ItemName", name);
+		mav.addObject("lineItemCount", lineItemCount);
+
+		mav.setViewName("cafe/order/orderSuccess");
+		return mav;
 	}
 }

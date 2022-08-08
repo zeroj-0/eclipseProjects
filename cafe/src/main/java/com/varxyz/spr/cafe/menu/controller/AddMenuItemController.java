@@ -21,8 +21,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.oreilly.servlet.MultipartRequest;
-import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 import com.varxyz.spr.cafe.menu.domain.MenuCategory;
 import com.varxyz.spr.cafe.menu.domain.MenuItem;
 import com.varxyz.spr.cafe.menu.domain.MenuItemCommand;
@@ -32,8 +30,9 @@ import com.varxyz.spr.cafe.menu.service.MenuService;
 @Controller("menu.controller.addMenuItemController")
 public class AddMenuItemController {
 	
-	private static final String SAVE_DIR = "C:/JAVA_lgm/eclipse-workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/cafe/resources/img/";
-	
+//	private static final String SAVE_DIR = "C:/JAVA_lgm/eclipse-workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/cafe/resources/img/";
+	private static final String SAVE_DIR = "/Users/zeroj/yeongjeong/Study/eclipseProjects/cafe/out/artifacts/jv330_war_exploded/resources/img/";
+
 	@Autowired
 	private MenuService menuService;
 	@Autowired
@@ -91,6 +90,7 @@ public class AddMenuItemController {
 			model.addAttribute("error", err);
 			return "/error/category";
 		}
+
 		
 		// 파일 만들기
 		File saveDir = new File(SAVE_DIR);
@@ -98,7 +98,7 @@ public class AddMenuItemController {
 		if(!saveDir.exists()) {
 			saveDir.mkdir();
 		}
-		
+
 		// 업로드한 파일로 새로운 파일 만들어서 경로에다가 복사해주기
 		File a = new File(saveDir.getPath()+ File.separator + multifile.getOriginalFilename());
 		// 복사해주는 메소드

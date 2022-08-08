@@ -189,47 +189,6 @@ section.main, section.subPage {
 	margin-right: 10px;
 }
 
-/* 버튼 */
-.btn-group {
-	display: flex;
-	width: 100%;
-	height: 50px;
-	margin-top: 30px;
-	justify-content: center;
-}
-
-.subpage-btn-wrap {
-	display: flex;
-	justify-content: space-around;
-	height: 100%;
-	width: 60%;
-}
-
-.subpage-btn-wrap > input {
-	justify-content: center;
-	border-style: none;
-	font-size: 30px;
-	background: #F4BFBF;
-	color: white;
-	border-radius: 30px;
-	width: 150px;
-	height: 50px;
-	cursor: pointer;
-	font-family: "okbi";
-}
-
-.subpage-btn-wrap>.btn {
-	font-size: 30px;
-	background: #F4BFBF;
-	color: white;
-	border-radius: 30px;
-	width: 150px;
-	height: 50px;
-	line-height: 50px;
-	text-align: center;
-	font-family: "okbi";
-}
-
 
 /* 상품페이지 */
 .container.main-container.sub-order {
@@ -354,6 +313,9 @@ img.img {
 }
 
 /* 카트 부분 */
+.cart-title {
+	text-align: center;
+}
 .cart-title, .e {
 	font-size: 24px;
 	font-weight: bold;
@@ -363,217 +325,109 @@ img.img {
 	font-size: 20px;
 }
 
-.gnb ul li a {
-	line-height: 70px;
-	font-size: 20px;
-	color: white;
-	font-family: "Jalnan";
-}
-
-
-
-
-
-.form-wrap> .login {
+.cart-table {
 	width: 100%;
+	text-align: center;
 }
 
-
-.container > .content-wrapper {
-    display: flex;
-    height: 100%;
-    align-items: flex-start;
-    width: 100%;
-    padding: 0 80px;
-    flex-wrap: wrap;
- }
-.container > #content-wrapper {
-    display: flex;
-    height: 100%;
-    align-items: flex-start;
-    width: 100%;
-    padding: 0 80px;
-    flex-wrap: wrap;
- }
-
-.content h4 {
-	font-size: 18px;
-}
-
-.add_user {
-	padding-top: 20px;
+/* 주문 완료 페이지 */
+.success-title-wrap {
 	width: 100%;
+	height: 20%;
+	text-align: center;
+}
+.success-title-wrap .title {
+	font-size: 44px;
+	font-weight: bold;
+	font-family: "sehwa";
+}
+.item-wrap .item {
+	font-size: 30px;
+	font-family: "sehwa";
+}
+.item .itemName {
+	font-weight: bold;
 }
 
-.add {
+
+/* 홈 버튼 */
+.home-btn-wrap {
+	width: 60px;
 	height: 60px;
-	width: 100%;
+	position: absolute;
+	bottom: 20px;
+	right: 20px;
+	background: #FAF0D7;
+	box-shadow: 1px 1px 6px 5px #FFD9C0;
+	border-radius: 100%;
+	text-align: center;
+	line-height: 60px;
+}
+
+.home-btn {
+	font-size: 22px;
+	font-weight: bold;
+}
+
+/* 버튼 */
+.btn-group {
 	display: flex;
-	justify-content: left;
-	align-items: center;
-	margin-top: 10px;
-}
-
-.phone {
-	height: 60px;
-	flex-wrap: wrap;
-}
-
-.add>input {
 	width: 100%;
-	height: 45px;
-	line-height: 45px;
-	padding-left: 15px;
-	font-size: 16px;
-	font-family: "Jalnan";
-}
-
-.add>input:focus {
-	outline: none;
-	border-color: rgba(201, 187, 207, .6);
-	box-shadow: 0 0 6px 2px rgba(201, 187, 207, .6);
-}
-
-
-
-span.phoneNum_middle {
-	margin: 0 5px;
-}
-
-span.phone {
-	margin-top: 5px;
-	display: block;
-	text-align: right;
-	font-size: 13px;
-	color: red;
-	margin-left: 15px;
-	width: 100%;
-}
-
-.address1 {
-	width: 250px;
-	margin-right: 10px;
-}
-.user {
-	width :100%;
-	height: 60px;
-	line-height: 60px;
-	font-size: 20px;
-	text-align: center;
-	font-family: "Jalnan";
-}
-.userId {
-	font-size: 22px;
-	margin-right: 6px;
-	color: #898AA6;
-}
-
-
-
-
-
-.i-btn>.in-btn:hover {
-	font-weight: normal;
-}
-.i-btn.btnmenuwrap {
-	width: 100%;	
+	height: 50px;
 	margin-top: 30px;
-}
-.i-btn > .in-btn.menulist {
-	font-size: 22px;
-	width: 200px;
-	height: 60px;
-	line-height: 60px;
-	letter-spacing: 0.3rem;
+	justify-content: center;
 }
 
-.i-btn > .in-btn.check {
-	height: 30px;
-	line-height: 30px;
-	font-size: 16px;
-}
-
-/*
-	계좌리스트 확인 페이지
-*/
-.accountListCheck  .i-btn.check{
-	margin: 0 auto;
-}
-.content.checkList {
+.subpage-btn-wrap {
+	display: flex;
+	justify-content: space-around;
 	height: 100%;
-	align-items: flex-start;
+	width: 60%;
 }
-.content.checkList > table {
-	width: 100%;
-	text-align: center;
-	border-collapse: collapse;
-}
-.content.checkList > table tr {
-	height: 60px;
-	line-height: 60px;
-	font-size: 18px;
-}
-.content.checkList > table tr td,.content.checkList > table tr th {
-	border: 1px solid #000;
-}
-.content.checkList > table tr th {
+
+.subpage-btn-wrap > input {
+	justify-content: center;
+	border-style: none;
+	font-size: 30px;
+	background: #F4BFBF;
 	color: white;
-	background: #C9BBCF;
+	border-radius: 30px;
+	width: 150px;
+	height: 50px;
+	cursor: pointer;
+	font-family: "okbi";
 }
 
-/*
-	통장 개설페이지
-*/
-.content.account {
-	height: 100%;
-	align-items: flex-start;
-	margin-top: 45px;
-}
-.add>select.account_selec:focus {
-	outline: none;
-	border-color: rgba(201, 187, 207, .6);
-	box-shadow: 0 0 6px 2px rgba(201, 187, 207, .6);
+.subpage-btn-wrap>.btn {
+	font-size: 30px;
+	background: #F4BFBF;
+	color: white;
+	border-radius: 30px;
+	width: 150px;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	font-family: "okbi";
 }
 
-select.account_selec {
-	height: 45px;
+.cart-wrap-btn {
+	display: flex;
+	justify-content: center;
+	height: 30px;
 	width: 100%;
-	padding-left: 10px;
+	margin: 20px 0;
 }
-select.account_selec, select.account_selec option {
-	font-family: "Jalnan";
-	font-size: 16px;
+
+.cart-wrap-btn > input {
+	justify-content: center;
+	border-style: none;
+	font-size: 19px;
+	background: #F4BFBF;
+	color: white;
+	border-radius: 30px;
+	width: 130px;
+	height: 30px;
+	cursor: pointer;
+	font-family: "okbi";
 }
-.i-btn.account {
-	width: 100%;
-	margin-top: 25px;
-}
-/*
-	계좌이체 페이지
-*/
-.content.account.balance_check {
-	flex-wrap: wrap;
-}
-.content.balance_check {
-	height: 100%;
-	align-items: flex-start;
-}
-.content.balance_check.accountNum{
-	flex-wrap : wrap;
-	height: 80px;
-}
-.content.balance_check .text-wrap{
-	font-size: 18px;
-	margin-top: 20px;
-	flex-wrap : wrap;
-	width: 100%;
-	text-align: center;
-}
-.content.balance_check .text-wrap > span{
-	font-size: 20px;
-	color: red;
-}
-.content.balance_check .text-wrap.accountNum{
-	width: 100%;
-	text-align: center;
-}
+
