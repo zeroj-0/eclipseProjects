@@ -1,0 +1,3 @@
+1. google chart api 활용!! (charts)
+2. bar차트, pie차트
+3. 모르겠습니다!!!!
