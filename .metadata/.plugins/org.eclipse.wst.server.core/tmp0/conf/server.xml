@@ -152,7 +152,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="C:\JAVA_lgm\eclipse-workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="C:\JAVA_lgm\eclipse-workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ncs-700" path="/ncs" reloadable="true" source="org.eclipse.jst.jee.server:ncs-700"/></Host>
+      <Context docBase="C:\JAVA_lgm\eclipse-workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="C:\JAVA_lgm\eclipse-workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ncs-700" path="/ncs" reloadable="true" source="org.eclipse.jst.jee.server:ncs-700"/><Context docBase="C:\JAVA_lgm\eclipse-workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\banking" path="/banking" reloadable="true" source="org.eclipse.jst.jee.server:banking"/><Context docBase="C:\JAVA_lgm\eclipse-workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\cafe" path="/cafe" reloadable="true" source="org.eclipse.jst.jee.server:cafe"/></Host>
     </Engine>
   </Service>
 </Server>

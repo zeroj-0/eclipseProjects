@@ -3,4 +3,5 @@
     <typeInfo handle="=jvx330/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.varxyz.jvx330.di.example5.ex1{MemberService.java[MemberService" modifiers="513" timestamp="1658381407752"/>
     <typeInfo handle="=jvx330/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.varxyz.jvx330.di.example5.ex2{CartService.java[CartService" modifiers="513" timestamp="1658383673924"/>
     <typeInfo handle="=cafe/C:\/Users\/Administrator\/.m2\/repository\/org\/springframework\/spring-jdbc\/5.3.21\/spring-jdbc-5.3.21.jar=/maven.pomderived=/true=/=/org.eclipse.jst.component.dependency=/\/WEB-INF\/lib=/=/maven.pomderived=/true=/=/org.eclipse.jst.component.archivename=/spring-jdbc-5.3.21.jar=/=/maven.groupId=/org.springframework=/=/maven.artifactId=/spring-jdbc=/=/maven.version=/5.3.21=/=/maven.scope=/compile=/&lt;org.springframework.jdbc.core(RowMapper.class[RowMapper" modifiers="1537" timestamp="1658295578594"/>
+    <typeInfo handle="=ncs-800/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.varxyz.ncs.util{StringsUtil.java[StringsUtil" modifiers="1" timestamp="1661322443559"/>
 </typeInfoHistroy>
